@@ -1,8 +1,9 @@
 body {
   font-family: 'Courier New', Courier, monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /*display: flex;
+  flex-direction: column;  //No need to flex body because the title and cards are already blocks
+  align-items: center;*/
+  text-align: center;
 }
 
 img {
@@ -13,26 +14,27 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
-  flex: 1;
   margin-bottom: 32px;
+  /*flex: 1;*/
 }
 
-.row-two {
+.row-two {                   /*consider renaming as "container" to make the flex more clear */
   display: flex;
-  flex-direction: row;
+  /*flex-direction: row;   //No need to specify direction; row is default and body is no longer column */
   justify-content: center;
-  column-gap: 52px;
-  flex-wrap: wrap;
+  gap: 52px;
+  /*flex-wrap: wrap;  wrap is not necessary */
 }
 
 .card {
-  width: 200px;
+  /*width: 200px;     //Here, the element is ALWAYS 200px
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column;*/
+  max-width: 200px;    /*If the element gets bigger than 200, it stays 200; otherwise it shrinks*/
+  }  
 
 .text, .image {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 /* do not edit this footer */
